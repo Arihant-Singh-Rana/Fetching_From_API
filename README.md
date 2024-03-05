@@ -49,9 +49,6 @@ export default function App() {
 }
 ```
 
-## Screenshots
-Include screenshots of the application in action or any other relevant visuals.
-
 ## Dependencies
 - React
 - Axios
