@@ -1,71 +1,60 @@
-# Getting Started with Create React App
+# React Product Display By Fetching From an API
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+This React application fetches and displays product information from a dummy JSON API. It uses Axios for making HTTP requests and renders product cards with images, titles, descriptions, and prices.
 
-## Available Scripts
+## Installation
+To run the app locally, follow these steps:
 
-In the project directory, you can run:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/your-repo.git
+   ```
 
-### `npm start`
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. Run the app:
+   ```bash
+   npm start
+   ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Usage
+Once the app is running, open your browser and navigate to `http://localhost:3000` to view the product display. The application fetches data from the [dummy JSON API](https://dummyjson.com/products) and displays the first 15 products.
 
-### `npm test`
+## Code Snippet
+Here's a snippet from the main React component (`App.js`):
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```jsx
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "./App.css";
 
-### `npm run build`
+export default function App() {
+  const [data, setData] = useState([]);
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  useEffect(() => {
+    async function fetchData() {
+      const response = await axios.get("https://dummyjson.com/products");
+      setData(response.data.products);
+    }
+    fetchData();
+  }, []);
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  // Rest of the component code for rendering product cards...
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  return <div className="parent">{show}</div>;
+}
+```
 
-### `npm run eject`
+## Screenshots
+Include screenshots of the application in action or any other relevant visuals.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Dependencies
+- React
+- Axios
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# Fetching_From_API
+Feel free to customize this README according to your project's specific details and requirements.
