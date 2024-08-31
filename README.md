@@ -1,7 +1,7 @@
 # React Product Display By Fetching From an API
 
 ## Objective
-
+---
 The goal of this React application is to fetch and display product information from the [Dummy JSON Products API](https://dummyjson.com/products). The app uses modern React features, such as hooks (`useState` and `useEffect`), and makes asynchronous API requests using Axios.
 
 ## Installation
